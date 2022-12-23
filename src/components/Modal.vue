@@ -1,11 +1,21 @@
 <template>
   <div class="top-0 fixed bg-[rgba(0,0,0,0.5)]  w-full h-full" @click.self="closeModal">
     <div class="modal w-[400px] p-5 mx-auto my-20 bg-white rounded-2xl" :class="{ sale: theme === 'sale' }">
-      <p>{{header}}</p>
-      <p>{{text}}</p>
-      <p>{{theme}}</p>
+
+      <slot></slot>
+      <div class="actions">
+
+        <slot name="links"></slot>
+
+      </div>
+
     </div>
+
   </div>
+
+
+
+
 </template>
 
 <script>
